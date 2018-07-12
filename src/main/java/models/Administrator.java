@@ -6,7 +6,6 @@ import javax.persistence.*;
 @Table(name = "administrators")
 public class Administrator extends Employee {
 
-    private int id;
     private Manager manager;
 
     public Administrator(){}

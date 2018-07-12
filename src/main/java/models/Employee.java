@@ -40,7 +40,7 @@ public abstract class Employee {
         return name;
     }
 
-    @Column(name = "niNumber")
+    @Column(name = "ni_number")
     public int getNiNumber() {
         return niNumber;
     }
