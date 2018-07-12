@@ -1,7 +1,13 @@
 package models;
 
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "employees")
 public abstract class Employee {
 
+    private int id;
     private String name;
     private int niNumber;
     private double salary;
@@ -14,14 +20,30 @@ public abstract class Employee {
         this.salary = salary;
     }
 
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+
+    @Column(name = "name")
     public String getName() {
         return name;
     }
 
+    @Column(name = "niNumber")
     public int getNiNumber() {
         return niNumber;
     }
 
+    @Column(name = "salary")
     public double getSalary() {
         return salary;
     }
