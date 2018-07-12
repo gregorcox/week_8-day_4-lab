@@ -1,13 +1,13 @@
 package models;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 @Table(name = "managers")
 public class Manager extends Employee {
 
-    private int id;
     private double budget;
     private Department department;
     private List<Administrator> administrators;
@@ -18,19 +18,9 @@ public class Manager extends Employee {
         super(name, niNumber, salary);
         this.budget = budget;
         this.department = department;
-        this.administrators = administrators;
+        this.administrators = new ArrayList<Administrator>();
     }
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     @Column(name = "budget")
     public double getBudget() {
@@ -60,5 +50,9 @@ public class Manager extends Employee {
 
     public void setAdministrators(List<Administrator> administrators) {
         this.administrators = administrators;
+    }
+
+    public void addAdmins(Administrator administrator){
+        this.administrators.add(administrator);
     }
 }
