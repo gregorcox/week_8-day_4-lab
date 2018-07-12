@@ -8,6 +8,8 @@ public class Manager extends Employee {
     private Department department;
     private List<Administrator> administrators;
 
+    public Manager(){}
+
     public Manager(String name, int niNumber, double salary, double budget){
         super(name, niNumber, salary);
         this.budget = budget;

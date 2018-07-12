@@ -5,6 +5,8 @@ public class Department {
     private String title;
     private Manager manager;
 
+    public Department(){}
+
     public Department(String title, Manager manager) {
         this.title = title;
         this.manager = manager;
